@@ -30,7 +30,10 @@ module.exports = app => {
 
     app.get(
         '/auth/google/callback',
-        passport.authenticate('google')
+        passport.authenticate('google'),
+        function(req,res){
+            res.send('You logged in');
+        }
     );
 
     app.get('/api/logout', (req,res) =>{
