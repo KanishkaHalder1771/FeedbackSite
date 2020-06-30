@@ -32,7 +32,7 @@ module.exports = app => {
         '/auth/google/callback',
         passport.authenticate('google'),
         function(req,res){
-            res.send('You logged in');
+            res.send('You logged in as' + req.user);
         }
     );
 
